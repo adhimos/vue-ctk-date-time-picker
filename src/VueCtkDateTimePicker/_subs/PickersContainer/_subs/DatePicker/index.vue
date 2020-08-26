@@ -127,6 +127,12 @@
               <span class="datepicker-day-text flex-1">
                 {{ day.format('D') }}
               </span>
+              <span
+                v-if="dateMarkers && dateMarkers[day.format('YYYY-MM-DD')]"
+                :style="dateMarkers[day.format('YYYY-MM-DD')].style"
+              >
+                {{ dateMarkers[day.format('YYYY-MM-DD')].text }}
+              </span>
             </button>
             <div
               v-for="end in endEmptyDays"
@@ -185,7 +191,8 @@
       noShortcuts: { type: Boolean, default: null },
       firstDayOfWeek: { type: Number, default: null },
       customShortcuts: { type: Array, default: () => ([]) },
-      visible: { type: Boolean, default: null }
+      visible: { type: Boolean, default: null },
+      dateMarkers: { type: Object, default: null }
     },
     data () {
       return {

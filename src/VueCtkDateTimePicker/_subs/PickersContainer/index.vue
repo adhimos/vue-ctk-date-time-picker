@@ -52,6 +52,7 @@
             :custom-shortcuts="customShortcuts"
             :no-keyboard="noKeyboard"
             :locale="locale"
+            :date-markers="dateMarkers"
             @change-month="changeMonth"
             @change-year-month="changeYearMonth"
             @close="$emit('close')"
@@ -141,7 +142,8 @@
       customShortcuts: { type: Array, default: null },
       noKeyboard: { type: Boolean, default: false },
       right: { type: Boolean, default: false },
-      behaviour: { type: Object, default: () => ({}) }
+      behaviour: { type: Object, default: () => ({}) },
+      dateMarkers: { type: Object, default: null }
     },
     data () {
       return {
@@ -257,6 +259,9 @@
       locale () {
         this.month = this.getMonth()
         this.componentKey += 1
+      },
+      month () {
+        this.$emit('change-year-month', this.month)
       }
     },
     methods: {

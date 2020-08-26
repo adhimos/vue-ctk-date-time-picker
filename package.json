@@ -57,9 +57,6 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "bugs": {
-    "url": "https://github.com/chronotruck/vue-ctk-date-time-picker/issues"
-  },
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
@@ -69,7 +66,6 @@
     "dist/",
     "nuxt/"
   ],
-  "homepage": "https://github.com/chronotruck/vue-ctk-date-time-picker/releases",
   "keywords": [
     "vue",
     "javascript",
@@ -88,7 +84,7 @@
   "main": "dist/vue-ctk-date-time-picker.common.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chronotruck/vue-ctk-date-time-picker.git"
+    "url": "git+https://github.com/adhimos/vue-ctk-date-time-picker.git"
   },
   "types": "dist/index.d.ts"
 }

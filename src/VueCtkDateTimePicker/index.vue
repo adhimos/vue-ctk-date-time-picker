@@ -71,8 +71,10 @@
       :no-keyboard="noKeyboard"
       :right="right"
       :behaviour="_behaviour"
+      :date-markers="dateMarkers"
       @validate="validate"
       @close="closePicker"
+      @change-year-month="changeYearMonth"
     />
   </div>
 </template>
@@ -360,6 +362,12 @@
       validate () {
         this.$emit('validate')
         this.closePicker()
+      },
+      changeYearMonth (month) {
+        this.$emit('change-year-month', {
+          start: month.start.format('YYYY-MM-DD'),
+          end: month.end.format('YYYY-MM-DD')
+        })
       }
     }
   }
